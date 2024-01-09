@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/pokedexProject/MicroserviceType/proto";
+
+service TypeService {
+  rpc CreateType (CreateTypeRequest) returns (CreateTypeResponse);
+  rpc GetType (GetTypeRequest) returns (GetTypeResponse);
+  rpc UpdateType (UpdateTypeRequest) returns (UpdateTypeResponse);
+  rpc DeleteType (DeleteTypeRequest) returns (DeleteTypeResponse);
+  rpc ListTypes (ListTypesRequest) returns (ListTypesResponse);
+}
+
+message CreateTypeRequest {
+  string nombre = 1;
+  string descripcion = 2;
+}
+
+message CreateTypeResponse {
+  string id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+}
+
+message GetTypeRequest {
+  string id = 1;
+}
+
+message GetTypeResponse {
+  string id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+}
+
+message UpdateTypeRequest {
+  string id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+}
+
+message UpdateTypeResponse {
+  string id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+}
+
+message DeleteTypeRequest {
+  string id = 1;
+}
+
+message DeleteTypeResponse {
+  string mensaje = 1;
+}
+
+message ListTypesRequest {
+}
+
+message ListTypesResponse {
+  repeated Type types = 1;
+}
+
+message Type{
+  string id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+}

@@ -16,9 +16,9 @@ func (TypeGORM) TableName() string {
 	return "tipos"
 }
 
-func (typeGORM *TypeGORM) ToGQL() (*Type, error) {
+func (typeGORM *TypeGORM) ToGQL() (*Tipo, error) {
 
-	return &Type{
+	return &Tipo{
 		ID:          strconv.Itoa(int(typeGORM.ID)),
 		Nombre:      typeGORM.Nombre,
 		Descripcion: typeGORM.Descripcion,
